@@ -21,7 +21,7 @@ function App() {
        <Canvas shadows camera={{ position: [5, 0, 15], fov: 30 }}>
       <spotLight position={[0, 8, 0]} angle={0.3} penumbra={1} castShadow intensity={3} shadow-bias={-0.0001} />
       <ambientLight intensity={0.5} />
-      
+      <MovingLight />
       {/* <Carwhite/>  */}
      <Fcar /> 
 
@@ -40,6 +40,27 @@ function App() {
     
   )
 }
+
+const MovingLight = () => {
+  const lightRef = useRef();
+
+  // Use the useFrame hook to update the light position on each frame
+  useFrame((state, delta) => {
+    if (lightRef.current) {
+      // Update the light's position here
+      // You can change the light's position based on time or any other parameter
+      const time = state.clock.elapsedTime;
+      const radius = 45;
+      const xPos = radius * Math.cos(time * 0.5);
+      const zPos = radius * Math.sin(time * 0.5);
+      lightRef.current.position.set(xPos, 10, zPos);
+    }
+  });
+
+  return (
+    <pointLight ref={lightRef} intensity={0.8} color="white" />
+  );
+};
 
 
 
