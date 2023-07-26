@@ -1,92 +1,91 @@
-import React, {useState} from 'react';
-import "./ColorSelector.css"
-import { useColorStore } from '../Utils/store';
+import React, { useState } from "react";
+import "./ColorSelector.css";
+import { useColorStore } from "../Utils/store";
 
 const BodyColors = [
   {
-    hex: '#338895',
+    hex: "#338895",
   },
   {
-    hex: '#E8D5AA',
+    hex: "#E8D5AA",
   },
   {
-    hex: '#FF7518',
+    hex: "#FF7518",
   },
   {
-    hex: '#F52504',
+    hex: "#F52504",
   },
   {
-    hex: '#000080',
+    hex: "#000080",
   },
   {
-    hex: '#000000',
+    hex: "#000000",
   },
   {
-    hex: '#30C5C8',
+    hex: "#30C5C8",
   },
   {
-    hex: '#FDD401',
+    hex: "#FDD401",
   },
   {
-    hex: '#C0C0C0',
+    hex: "#C0C0C0",
   },
   {
-    hex: '#32CD32',
+    hex: "#32CD32",
   },
   {
-    hex: '#41ABFE',
+    hex: "#41ABFE",
   },
 ];
 
 const RimColors = [
   {
-    hex: '#E3E6D5',
+    hex: "#E3E6D5",
   },
   {
-    hex: '#000',
+    hex: "#000",
   },
   {
-    hex: 'red',
+    hex: "red",
   },
   {
-    hex: '#62503E',
+    hex: "#62503E",
   },
- 
 ];
 
 const RoofColors = [
   {
-    hex: '#338895',
+    hex: "#338895",
   },
   {
-    hex: '#E8D5AA',
+    hex: "#E8D5AA",
   },
   {
-    hex: '#FF7518',
+    hex: "#FF7518",
   },
   {
-    hex: '#F52504',
+    hex: "#F52504",
   },
   {
-    hex: '#000080',
+    hex: "#000080",
   },
   {
-    hex: '#000000',
+    hex: "#000000",
   },
   {
-    hex: '#30C5C8',
+    hex: "#30C5C8",
   },
   {
-    hex: '#FDD401',
+    hex: "#FDD401",
   },
   {
-    hex: '#C0C0C0',
+    hex: "#C0C0C0",
   },
   {
-    hex: '#32CD32',
+    hex: "#32CD32",
   },
   {
-    hex: '#41ABFE',
+    hex: "#41ABFE",
   },
 ];
 const ColorSelector = () => {
@@ -101,30 +100,38 @@ const ColorSelector = () => {
   return (
     <div
       style={{
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        top: '15%',
-        right: '6rem',
-        width: '400px',
-        height: '500px',
+        display: "flex",
+        flexDirection: "column",
+        position: "absolute",
+        top: "15%",
+        right: "6rem",
+        width: "400px",
+        height: "500px",
         // border: '3px solid #f00',
-        boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.1)',
-        borderRadius: '5px', 
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
+        boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.1)",
+        borderRadius: "5px",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
       }}
     >
       <div className='color-div'>
         <h3>Body Colors</h3>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+          }}
+        >
           {BodyColors.map((color, index) => (
             <div
               key={index}
-              className={`color-circle-div ${activeBodyColor === color ? 'active' : ''}`}
+              className={`color-circle-div ${
+                activeBodyColor === color ? "active" : ""
+              }`}
             >
               <div
-                className="color-circle"
+                className='color-circle'
                 style={{
                   backgroundColor: color.hex,
                 }}
@@ -135,14 +142,22 @@ const ColorSelector = () => {
         </div>
 
         <h3>Rim Colors</h3>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+          }}
+        >
           {RimColors.map((color, index) => (
             <div
               key={index}
-              className={`color-circle-div ${activeRimColor === color ? 'active' : ''}`}
+              className={`color-circle-div ${
+                activeRimColor === color ? "active" : ""
+              }`}
             >
               <div
-                className="color-circle"
+                className='color-circle'
                 style={{
                   backgroundColor: color.hex,
                 }}
@@ -153,14 +168,22 @@ const ColorSelector = () => {
         </div>
 
         <h3>Roof Colors</h3>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+          }}
+        >
           {RoofColors.map((color, index) => (
             <div
               key={index}
-              className={`color-circle-div ${activeRoofColor === color ? 'active' : ''}`}
+              className={`color-circle-div ${
+                activeRoofColor === color ? "active" : ""
+              }`}
             >
               <div
-                className="color-circle"
+                className='color-circle'
                 style={{
                   backgroundColor: color.hex,
                 }}
