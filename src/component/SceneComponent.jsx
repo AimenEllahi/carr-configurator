@@ -1,7 +1,6 @@
+import { useRef, Suspense, useEffect } from 'react'
 import { Canvas, useFrame, useLoader, applyProps } from '@react-three/fiber'
 import "../App.css"
-
-import { useRef, Suspense } from 'react'
 import {Carwhite} from './Carwhite'
 import ColorSelector from './ColorSelector'
 import * as THREE from 'three'
@@ -60,11 +59,9 @@ function CameraRig({ v = new THREE.Vector3() }) {
   })
 }
 
-
-
 function SceneComponent() {
   const [degraded, degrade] = useState(false)
-  
+ 
   return (
       <div style={{
         height: '100vh',
@@ -73,7 +70,7 @@ function SceneComponent() {
       <Canvas shadows camera={{ position: [5, 0, 15], fov: 30 }} shadowMap="pcfsoft">
       <spotLight position={[0, 8, 0]} angle={0.3} penumbra={1} castShadow intensity={1} shadow-bias={-0.0001} />
       <ambientLight intensity={0.5} />
-      <AccumulativeShadows position={[0, -1.16, 0]} frames={100} alphaTest={0.9} scale={20}>
+      <AccumulativeShadows position={[0, -1.16, 0]} frames={100} alphaTest={0.9} scale={30}>
         <RandomizedLight amount={2} radius={10} ambient={0.5} position={[1, 5, -1]} />
       </AccumulativeShadows>
       <MovingLight />
@@ -100,4 +97,5 @@ function SceneComponent() {
       </div>
   )
 }
+
 export default SceneComponent
