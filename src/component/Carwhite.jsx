@@ -21,6 +21,7 @@ export function Carwhite(props) {
   }, [nodes, materials]);
 
   return (
+  
     <group
       scale={1.5}
       position={[-2.5, -1.15, -1]}
@@ -193,6 +194,7 @@ export function Carwhite(props) {
         scale={0.01}
       />
     </group>
+ 
   );
 }
 

@@ -12,6 +12,7 @@ import {
   useGLTF,
   Html,
   useProgress,
+  PresentationControls,
 } from "@react-three/drei";
 
 const MovingLight = () => {
@@ -84,7 +85,7 @@ function SceneComponent() {
     >
       <Canvas
         shadows
-        camera={{ position: [5, 0, 15], fov: 30 }}
+        camera={{ position: [5, 0, 15], fov: 30, }}
         shadowMap='pcfsoft'
       >
         <spotLight
@@ -99,6 +100,10 @@ function SceneComponent() {
 
         <MovingLight />
         <Suspense fallback={<Loader />}>
+        <PresentationControls  
+         enabled={true}
+          polar={[0, 0]}
+          azimuth={[-1.7, 1.7]} >
           <AccumulativeShadows
             position={[0, -1.16, 0]}
             frames={100}
@@ -113,6 +118,7 @@ function SceneComponent() {
             />
           </AccumulativeShadows>
           <Carwhite />
+        </PresentationControls>
         </Suspense>
 
         <CameraRig />

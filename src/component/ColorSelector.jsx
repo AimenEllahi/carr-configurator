@@ -120,18 +120,20 @@ const ColorSelector = () => {
           style={{
             display: "flex",
             flexWrap: "wrap",
-            justifyContent: "space-between",
+            // justifyContent: "space-between",
           }}
         >
           {BodyColors.map((color, index) => (
             <div
               key={index}
-              className={`color-circle-div ${
-                activeBodyColor === color ? "active" : ""
-              }`}
+              // className={`color-circle-div ${
+              //   activeBodyColor === color ? "active" : ""
+              // }`}
             >
               <div
-                className='color-circle'
+                 className={`color-circle ${
+                  activeBodyColor === color ? "active" : ""
+                }`}
                 style={{
                   backgroundColor: color.hex,
                 }}
@@ -146,18 +148,20 @@ const ColorSelector = () => {
           style={{
             display: "flex",
             flexWrap: "wrap",
-            justifyContent: "space-between",
+            // justifyContent: "space-between",
           }}
         >
           {RimColors.map((color, index) => (
             <div
               key={index}
-              className={`color-circle-div ${
-                activeRimColor === color ? "active" : ""
-              }`}
+              // className={`color-circle-div ${
+              //   activeRimColor === color ? "active" : ""
+              // }`}
             >
               <div
-                className='color-circle'
+                 className={`color-circle ${
+                  activeRimColor === color ? "active" : ""
+                }`}
                 style={{
                   backgroundColor: color.hex,
                 }}
@@ -172,18 +176,20 @@ const ColorSelector = () => {
           style={{
             display: "flex",
             flexWrap: "wrap",
-            justifyContent: "space-between",
+            // justifyContent: "space-between",
           }}
         >
           {RoofColors.map((color, index) => (
             <div
               key={index}
-              className={`color-circle-div ${
-                activeRoofColor === color ? "active" : ""
-              }`}
+              // className={`color-circle-div ${
+              //   activeRoofColor === color ? "active" : ""
+              // }`}
             >
               <div
-                className='color-circle'
+                  className={`color-circle ${
+                    activeRoofColor === color ? "active" : ""
+                  }`}
                 style={{
                   backgroundColor: color.hex,
                 }}
