@@ -1,13 +1,12 @@
-import React from 'react'
-import SceneComponent from './component/SceneComponent'
-import Navbar from './component/Navbar'
+import React from "react";
+import Scene from "./component/Scene";
+import Navbar from "./component/Navbar";
 
-export default function 
-() {
+export default function () {
   return (
     <div>
       <Navbar />
-      <SceneComponent />
+      <Scene />
     </div>
-  )
+  );
 }

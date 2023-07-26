@@ -5,7 +5,7 @@ import { Carwhite } from "./Carwhite";
 import ColorSelector from "./ColorSelector";
 import * as THREE from "three";
 import { useLayoutEffect } from "react";
-
+import Loader from "./Loader";
 import {
   AccumulativeShadows,
   RandomizedLight,
@@ -13,11 +13,6 @@ import {
   Html,
   useProgress,
 } from "@react-three/drei";
-
-const Loader = () => {
-  const { progress } = useProgress();
-  return <Html center>{progress.toFixed(0)} % loaded</Html>;
-};
 
 const MovingLight = () => {
   const lightRef = useRef();
