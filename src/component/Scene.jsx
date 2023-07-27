@@ -102,7 +102,7 @@ function SceneComponent() {
         <Suspense fallback={<Loader />}>
         <PresentationControls  
          enabled={true}
-          polar={[0, 0]}
+          
           azimuth={[-1.7, 1.7]} >
           <AccumulativeShadows
             position={[0, -1.16, 0]}
