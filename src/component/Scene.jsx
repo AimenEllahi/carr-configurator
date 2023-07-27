@@ -13,7 +13,9 @@ import {
   Html,
   useProgress,
   PresentationControls,
+  OrbitControls,
 } from "@react-three/drei";
+
 
 const MovingLight = () => {
   const lightRef = useRef();
@@ -100,28 +102,13 @@ function SceneComponent() {
 
         <MovingLight />
         <Suspense fallback={<Loader />}>
-        <PresentationControls  
-         enabled={true}
-          
-          azimuth={[-1.7, 1.7]} >
-          <AccumulativeShadows
-            position={[0, -1.16, 0]}
-            frames={100}
-            alphaTest={0.9}
-            scale={30}
-          >
-            <RandomizedLight
-              amount={2}
-              radius={10}
-              ambient={0.5}
-              position={[1, 5, -1]}
-            />
-          </AccumulativeShadows>
+      
           <Carwhite />
-        </PresentationControls>
+       
         </Suspense>
 
         <CameraRig />
+        
       </Canvas>
       <ColorSelector />
       <div

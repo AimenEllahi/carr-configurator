@@ -6,8 +6,8 @@ Command: npx gltfjsx@6.2.8 car.glb --transform --keepmeshes
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export function Mycar(props) {
-  const { nodes, materials } = useGLTF("/car-transformed.glb");
+export function MCart(props) {
+  const { nodes, materials } = useGLTF("/models/car-transformed.glb");
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.01}>
