@@ -12,7 +12,7 @@
 }
 
 .color-circle.active {
-  border: 2px solid rgb(10, 10, 9);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
 }
 
 /* .color-circle-div.active {

@@ -14,8 +14,8 @@ import {
   useProgress,
   PresentationControls,
   OrbitControls,
+  Environment,
 } from "@react-three/drei";
-
 
 const MovingLight = () => {
   const lightRef = useRef();
@@ -85,30 +85,41 @@ function SceneComponent() {
         width: "100vw",
       }}
     >
-      <Canvas
-        shadows
-        camera={{ position: [5, 0, 15], fov: 30, }}
-        shadowMap='pcfsoft'
-      >
-        <spotLight
+      <Canvas shadows camera={{ position: [5, 0, 15], fov: 30 }}>
+        {/* <spotLight
           position={[0, 8, 0]}
           angle={0.3}
           penumbra={1}
           castShadow
           intensity={1}
           shadow-bias={-0.0001}
-        />
-        <ambientLight intensity={0.5} />
+        /> */}
 
         <MovingLight />
-        <Suspense fallback={<Loader />}>
-      
-          <Carwhite />
-       
-        </Suspense>
+        <Environment preset='apartment' />
 
-        <CameraRig />
-        
+        <Suspense fallback={<Loader />}>
+          <AccumulativeShadows
+            position={[0, -1.16, 0]}
+            frames={100}
+            alphaTest={0.9}
+            scale={50}
+          >
+            <RandomizedLight
+              amount={2}
+              radius={10}
+              ambient={0.5}
+              position={[1, 5, -1]}
+            />
+          </AccumulativeShadows>
+          <Carwhite />
+        </Suspense>
+        {/* <CameraRig /> */}
+        <OrbitControls
+          maxPolarAngle={Math.PI * 0.495}
+          rotateSpeed={0.6}
+          panSpeed={0.6}
+        />
       </Canvas>
       <ColorSelector />
       <div
